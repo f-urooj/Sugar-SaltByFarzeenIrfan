@@ -39,7 +39,7 @@ Admin page is completely protected via Firebase Auth – unauthenticated users a
 
 🔗 Live Site
 🌐 View Live Website
-(Replace with actual Netlify URL)
+https://sugarandsalt.netlify.app/
 
 👩‍🍳 About the Client
 This project was developed for Farzeen Irfan, a passionate home baker and founder of Sugar & Salt, which offers a delightful mix of cookies, cakes, and savory baked treats.
