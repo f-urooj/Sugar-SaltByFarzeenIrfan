@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sugar & Salt By Farzeen Irfan</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyDWSjOEfFsfQGur4u0nCxgRLg_3XWa0JYg",
+    authDomain: "sugarandsalt-fefe0.firebaseapp.com",
+    databaseURL: "https://sugarandsalt-fefe0-default-rtdb.firebaseio.com",
+    projectId: "sugarandsalt-fefe0",
+    storageBucket: "sugarandsalt-fefe0.appspot.com", 
+    messagingSenderId: "499619321049",
+    appId: "1:499619321049:web:f592b5fbd1dfe3c30a5ac8"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const database = firebase.database();
+
+</script>
+<!-- font awesome cdn -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arizonia&family=Imperial+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arizonia&family=Caveat:wght@400..700&family=Imperial+Script&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <!--  -->
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow clr" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn btnc" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+            <img src="./images/Images/Logo.png" alt="Logo" width="120" height="95" class="me-3">
+            <a class="navbar-brand brand-text " href="index.html">by Farzeen Irfan</a>
+            <!-- <h6 class="text-primary m-0 brand-text">By Farzeen Irfan</h6> -->
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link ">Home</a>
+                <a href="#aboutus" class="nav-item nav-link">About</a>
+                <!-- <a href="menu.html" class="nav-item nav-link">Menu</a> -->
+                <div class="nav-item dropdown">
+                    <a href="#menu" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Menu</a>
+                    <div class="dropdown-menu bg m-0">
+                        <a href="cookies.html" class="dropdown-item text-light">Cookies</a>
+                        <a href="brownmuff.html" class="dropdown-item text-light">Brownies & Muffins</a>
+                        <a href="bundtcakes.html" class="dropdown-item text-light">Bundt Cakes</a>
+                        <a href="teabread.html" class="dropdown-item text-light">Tea Cakes & Breads</a>
+                        <a href="savory.html" class="dropdown-item text-light">Savory</a>
+                    </div>
+                </div>
+                <!-- <a href="contact.html" class="nav-item nav-link">Contact</a> -->
+            </div>
+            <!-- <div class=" d-none d-lg-flex">
+                <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle">
+                     <i class="fa-brands fa-whatsapp text-light"></i>
+                </div>
+                <div class="ps-3">
+                    <small class="text-primary text-light mb-0 brand-text">WhatsApp</small>
+                    <p class="text-light fs-5 mb-0">+92317-0021911</p>
+                </div>
+            </div> -->
+            <a href="https://wa.me/923170021911?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order%20from%20Sugar%20%26%20Salt." target="_blank" style="text-decoration: none;">
+    <div class="d-none d-lg-flex">
+        <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle">
+            <i class="fa-brands fa-whatsapp text-light"></i>
+        </div>
+        <div class="ps-3">
+            <small class="text-light mb-0 brand-text">WhatsApp</small>
+            <p class="text-light fs-5 mb-0">+92317-0021911</p>
+        </div>
+    </div>
+</a>
+
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="./images/Images/cover.avif" alt="">
+                <div class="owl-carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-lg-8">
+                                <!-- <p class="text-primary text-uppercase fw-bold mb-2">// The Best Bakery</p> -->
+                                <h1 class="display-1 text-light mb-4 animated slideInDown">We Bake With Heart</h1>
+                                <p class="text-light fs-5 mb-4 pb-3">
+                                    From the warmth of our home to yours — every cookie, cake, and bite is crafted with
+                                    love, care, and a sprinkle of magic.
+                                </p>
+                                <a href="#aboutus" class="btn btn-primary rounded-pill py-3 px-5 btnc">Explore Our
+                                    Story</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="images/Images/cvr.avif" alt="">
+                <div class="owl-carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-lg-8">
+                                <h1 class="display-1 text-light mb-4 animated slideInDown">Made Fresh, Just for You</h1>
+                                <p class="text-light fs-5 mb-4 pb-3">
+                                    Every batch is handmade with love, using the finest ingredients — because you
+                                    deserve nothing less than sweet perfection.
+                                </p>
+                                <a href="#menu" class="btn btn-primary rounded-pill py-3 px-5 btnc">See Our Menu</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-6">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="row img-twice position-relative h-100">
+                        <div class="col-6">
+                            <img class="img-fluid rounded" src="images/Images/bronie/Cheesy walnut brownie.jpeg" alt="">
+                        </div>
+                        <div class="col-6 align-self-end">
+                            <img class="img-fluid rounded" src="images/Images/bronie/Triple chocolate cookie.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" id="aboutus" data-wow-delay="0.5s">
+                    <div class="h-100">
+                        <p class="clr text-uppercase mb-2">// About Us</p>
+                        <h1 class="display-6 mb-4">We Bake Every Treat with Heart & Soul</h1>
+                        <p>
+                            At Sugar & Salt, baking isn't just a process — it's a passion poured into every cookie,
+                            cupcake, and custom creation.
+                            From our cozy home kitchen to your celebrations, we deliver sweetness made with care.
+                        </p>
+                        <p>
+                            Whether it's a batch of classic favorites or a custom order made just for you, each bite
+                            carries the warmth of homemade love.
+                            Because here, you're not just a customer — you're family.
+                        </p>
+
+                        <div class="row g-2 mb-4">
+                            <div class="col-sm-6">
+                                <i class="fa fa-check clr me-2"></i>Quality Ingredients
+                            </div>
+                            <div class="col-sm-6">
+                                <i class="fa fa-check clr me-2"></i>Made-to-Order Treats
+                            </div>
+                            <div class="col-sm-6">
+                                <i class="fa fa-check clr me-2"></i>Online Orders Welcome
+                            </div>
+                            <div class="col-sm-6">
+                                <i class="fa fa-check clr me-2"></i>Home Delivery Available
+                            </div>
+                        </div>
+
+                        <!-- <a class="btn btn-primary rounded-pill py-3 px-5" href="#">Read More</a> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Product Start -->
+    <div class="container-xxl bg-light my-6 py-6 pt-0">
+        <div class="container">
+            <div class="bg text-light rounded-bottom p-5 my-6 mt-0 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-6">
+<h1 class="display-4 text-light mb-0">From My Home Oven to Your Heart</h1>
+                    </div>
+                    <div class="col-lg-6 text-lg-end">
+    <a href="https://wa.me/923170021911?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order%20from%20Sugar%20%26%20Salt." 
+       target="_blank" 
+       style="text-decoration: none;">
+       
+        <div class="d-inline-flex align-items-center text-start">
+            <i class="fa-brands fa-whatsapp fa-4x flex-shrink-0 text-light"></i>
+            <div class="ms-4">
+                <p class="fs-5 fw-bold text-light mb-0">Message Us</p>
+                <p class="fs-1 text-light fw-bold mb-0">+92317-0021911</p>
+            </div>
+        </div>
+        
+    </a>
+</div>
+
+                </div>
+            </div>
+            <div class="text-center mx-auto mb-5 wow fadeInUp" id="menu" data-wow-delay="0.1s" style="max-width: 500px;">
+                <p class="clr text-uppercase mb-2">// Bakery Products</p>
+                <h1 class="display-6 mb-4">Explore The Categories Of Our Bakery Products</h1>
+            </div>
+            <div class="row g-4">
+                
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
+                        <div class="text-center p-4">
+                            <div class="d-inline-block border border-info rounded-pill pt-1 px-3 mb-3">200-300 Rs
+                            </div>
+                            <h3 class="mb-3">Cookies</h3>
+                        <div class="position-relative mt-auto">
+                            <img class="img-fluid" src="images/Images/New folder/coookss.avif" alt="">
+                            <div class="product-overlay">
+                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href="cookies.html"><i
+                                        class="fa fa-eye text-primary"></i></a>
+                            </div>
+                        </div>
+        </div>
+    </div>
+             </div>
+             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
+                        <div class="text-center p-4">
+                            <div class="d-inline-block border border-info rounded-pill pt-1 px-3 mb-3">200-300 Rs
+                            </div>
+                            <h3 class="mb-3">Brownies & Muffins</h3>
+                        <div class="position-relative mt-auto">
+                            <img class="img-fluid" src="images/Images/bronie/bornw.avif" alt="">
+                            <div class="product-overlay">
+                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href="brownmuff.html"><i
+                                        class="fa fa-eye text-primary"></i></a>
+                            </div>
+                        </div>
+        </div>
+    </div>   
+             </div>
+             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
+                        <div class="text-center p-4">
+                            <div class="d-inline-block border border-info rounded-pill pt-1 px-3 mb-3">500-1200 Rs
+                            </div>
+                            <h3 class="mb-3">Tea Cakes & Breads</h3>
+                        <div class="position-relative mt-auto">
+                            <img class="img-fluid" src="images/Images/bread and tea/bana.avif" alt="">
+                            <div class="product-overlay">
+                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href="teabread.html"><i
+                                        class="fa fa-eye text-primary"></i></a>
+                            </div>
+                        </div>
+        </div>
+    </div>
+     </div>
+             </div>
+             <!-- next row -->
+              <div class="row g-4 mt-4">
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
+                        <div class="text-center p-4">
+                            <div class="d-inline-block border border-info rounded-pill px-3 mb-3">2000-3000 Rs</div>
+                            <h3 class="mb-3">Bundt Cakes</h3>
+
+                        <div class="position-relative mt-auto">
+                            <img class="img-fluid product-img" src="images/Images/bundt/bundd.avif" alt="">
+                            <div class="product-overlay">
+                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href="bundtcakes.html"><i
+                                        class="fa fa-eye text-primary"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
+                        <div class="text-center p-4">
+                            <div class="d-inline-block border border-info rounded-pill px-3 mb-3">200-400 Rs</div>
+                            <h3 class="mb-3">Savory</h3>
+
+                        <div class="position-relative mt-auto">
+                            <img class="img-fluid product-img" src="images/Images/save/save.avif" alt="" height="1350px" width="500px">
+                            <div class="product-overlay">
+                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href="savory.html"><i
+                                        class="fa fa-eye text-primary"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+             </div>
+    <!-- Product End -->
+
+
+    <!-- Service Start -->
+    
+    <!-- Service End -->
+
+
+    <!-- Team Start -->
+   
+    <!-- Team End -->
+
+    <!-- Testimonial Start -->
+   
+    <!-- Testimonial End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer my-6 mb-0 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Let's Connect</h4>
+                                   <div class="d-flex pt-2 justify-content-start">
+    <a class="btn btn-square btn-outline-light rounded-circle me-1" 
+       href="https://www.instagram.com/sugar_n_salt.by.farzeen/" 
+       target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a class="btn btn-square btn-outline-light rounded-circle me-1" 
+       href="https://wa.me/923170021911?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order%20from%20Sugar%20%26%20Salt." 
+       target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</div>
+      </div>
+   <!-- form -->
+      <div class="col-lg-6 col-md-12 ms-5 ">
+    <h4 class="text-light mb-4">Leave Us a Review</h4>
+    <form id="reviewForm">
+        <div class="mb-3">
+            <input type="text" id="name" class="form-control bg-transparent border-light text-light" placeholder="Your Name" required>
+        </div>
+        <div class="mb-3">
+            <input type="number" id="phone" class="form-control bg-transparent border-light text-light" placeholder="Your Phone Number" required>
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control bg-transparent border-light text-light" id="review" rows="4" placeholder="Your Review..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary rounded-pill px-4">Submit Review</button>
+    </form>
+</div>
+    </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-light py-4 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a href="#">Sugar & Salt by Farzeen Irfan</a>, Pictures are just for reference.
+                </div>
+                <!-- <div class="col-md-6 text-center text-md-end">
+                    /*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/
+                    Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                    <br>Distributed By: <a class="border-bottom" href="https://themewagon.com"
+                        target="_blank">ThemeWagon</a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
